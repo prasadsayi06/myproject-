@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Drawings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f7aa6b;
+    }
+
+    .gallery img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+
+    .gallery img {
+      width: 150px;
+      margin: 10px;
+      border: 2px solid #e41a90;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      border-color: #dfd10c;
+     
+    }
+
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(166, 224, 190, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    #lightbox-img {
+      max-width: 90%;
+      max-height: 80%;
+      border: 4px solid white;
+      border-radius: 10px;
+    }
+
+    #lightbox:active {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>My Drawings</h2>
+
+  <div class="gallery">
+    <img src="virat.jpg" alt="Drawing of Virat" onclick="openLightbox(this.src)">
+    <img src="shiva.jpg" alt="Drawing of Shiva" onclick="openLightbox(this.src)">
+    <img src="modi.jpg" alt="Drawing of Modi" onclick="openLightbox(this.src)">
+    <img src="krishna.jpg" alt="Drawing of Krishna" onclick="openLightbox(this.src)">
+    <img src="shivaji.jpg" alt="Drawing of Shivaji" onclick="openLightbox(this.src)">
+    <img src="nature.jpg" alt="Drawing of Shivaji" onclick="openLightbox(this.src)">
+    <img src="koragaja.jpg" alt="Drawing of Shivaji" onclick="openLightbox(this.src)">
+    <img src="jcb.jpg" alt="Drawing of Shivaji" onclick="openLightbox(this.src)">
+    <img src="hanu.jpg" alt="Drawing of Shivaji" onclick="openLightbox(this.src)">
+  </div>
+
+  <div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Enlarged Drawing">
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById("lightbox-img").src = src;
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>

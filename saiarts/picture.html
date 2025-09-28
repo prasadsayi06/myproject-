@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Drawings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      text-align: center;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 200px;
+      height: auto;
+      border: 2px solid #ccc;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Lightbox styles */
+    #lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(209, 14, 14, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 4px solid white;
+    }
+  </style>
+</head>
+<body>
+
+  
+
+  <h2>My Drawings</h2>
+<div class="gallery">
+  <img src="Virat.jpg" alt="Drawing1" onclick="openLightbox(this.src)">
+  <img src="shiva.d.jpg" alt="Drawing of Shiva" onclick="openLightbox(this.src)">
+  <img src="modi.d.jpg" alt="Drawing of Modi" onclick="openLightbox(this.src)">
+  <img src="nature.d.jpg" alt="Nature Drawing" onclick="openLightbox(this.src)">
+  <img src="shivaji.d.jpg" alt="Drawing of Shivaji" onclick="openLightbox(this.src)">
+</div>
+
+  <div id="lightbox" onclick="closeLi  <img src="koragaja.d.jpg" alt="Drawing of Koragaja" onclick="openLightbox(this.src)">
+ghtbox()">
+    <img id="lightbox-img" src="">
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById("lightbox-img").src = src;
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
